@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="NavBar3.css">
+</head>
+<body>
+    
+        <header>
+            <div class="nav-bar">
+                <nav>
+                    <img src="logo2-removebg-preview.png" class="logo" alt="Website Logo">
+                    <ol class="nav-links">
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="#Gallery">Gallery</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="profile.html" class="active">User Profile</a></li>
+                        <li><a href="Feedback.html">Feedback</a></li>
+                        <li><a href="#Sitemap">Sitemap</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </header>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div id="profileBuilder">
+        <!-- Prompt section -->
+        <div id="promptSection">
+            <!-- Step 1: Personal Details -->
+            <div id="personalDetails" class="step">
+                <h2>Step 1: Personal Details</h2>
+                <p>Enter your name:</p>
+                <input type="text" id="nameInput">
+                <p>Enter your age:</p>
+                <input type="number" id="ageInput">                
+                <p>Enter your gender:</p>
+                <input type="text" id="genderInput">               
+                <p>agree with privacy terms:</p>
+                <input type="text" id="agreeInput">
+                <button onclick="nextStep()">Next</button>
+            </div>
+            <!-- Step 2: Tasks -->
+            <div id="tasks" class="step" style="display: none;">
+                <h2>Step 2: Medical History</h2>
+                <p>Enter your Medical History:</p>
+                <input type="text" id="historyInput">               
+                <button onclick="nextStep()">Next</button>
+            </div>
+            <!-- Step 3: Qualifications -->
+            <div id="qualifications" class="step" style="display: none;">
+                <h2>Step 3: prescription </h2>
+                <p>Enter your prescription:</p>
+                <input type="text" id="prescriptionInput">
+                <button onclick="nextStep()">Next</button>
+            </div>
+            <!-- Step 4: contact -->
+            <div id="Contact" class="step" style="display: none;">
+                <h2>Step 4:Contact</h2>
+                <p>Contact deteails:</p>
+                <input type="text" id="ContactInput">
+                <button onclick="finish()">Finish</button>
+            </div>
+            
+
+        </div>
+        
+        <!-- Profile display -->
+        <div id="profileDisplay" style="display: none;">
+            <h2>User Profile</h2>
+            <p>Name: <span id="profileName"></span></p>  
+            <p>Age	:<span id="profileAge"></span></p>  
+            <p>Gender	:<span id="profileGender"></span></p>
+            <p>Agree	:<span id="profileAgree"></span></p>            
+            <p>History: <span id="profileHistory"></span></p>
+            <p>Prescription: <span id="profilePrescription"></span></p>
+            <p>Contact: <span id="profileContact"></span></p>
+            
+        </div>
+         
+        <!-- Progress indicator -->
+        <div id="progressIndicator">
+            <p>Progress: <span id="progressValue">0%</span></p>
+            <progress id="progressBar" value="0" max="100"></progress>
+        </div>
+        
+    </div>
+
+    <script>
+        // JavaScript functions to control the profile building process
+        let currentStep = 1;
+
+        function nextStep() {
+            document.getElementById(`promptSection`).children[currentStep-1].style.display = 'none';
+            currentStep++;
+            document.getElementById(`promptSection`).children[currentStep-1].style.display = 'block';
+            updateProgress();
+        }
+
+        function finish() {
+            // Process completed profile data
+            displayProfile();
+            document.getElementById('promptSection').style.display = 'none';
+            currentStep++;
+            document.getElementById('profileDisplay').style.display = 'block';
+            updateProgress();
+        }
+
+
+        function updateProgress() {
+            let progress = (currentStep - 1) * 25; // 4 steps, each worth 25% progress
+            document.getElementById('progressValue').innerText = `${progress}%`;
+            document.getElementById('progressBar').value = progress;
+        }
+
+        function displayProfile() {
+            // Get user inputs and display in profile section
+            let name = document.getElementById('nameInput').value;
+            let age=document.getElementById('ageInput').value;
+            let gender=document.getElementById('genderInput').value;
+            let agree=document.getElementById('agreeInput').value;
+            let history = document.getElementById('historyInput').value;
+            let prescription= document.getElementById('prescriptionInput').value;
+            let Contact = document.getElementById('ContactInput').value;
+            document.getElementById('profileName').innerText = name;
+            document.getElementById('profileAge').innerText=age;
+            document.getElementById('profileGender').innerText=gender;
+            document.getElementById('profileAgree').innerText=agree;
+            document.getElementById('profileHistory').innerText = history;
+            document.getElementById('profilePrescription').innerText = prescription;
+            document.getElementById('profileContact').innerText = Contact;
+        }
+
+    </script>
+    
+		<footer>
+            <p><a href="PageEditor3.html">Click to view the Page Editor</a></p>
+            <p>&copy; 2024 MediHelp. All rights reserved.</p>
+		</footer>
+	
+</body>
+</html>

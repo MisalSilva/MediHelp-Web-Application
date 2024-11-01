@@ -1,0 +1,105 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(Feedback.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.form-elements {
+    text-align: center;
+}
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.form-elements h3,input,select,textarea {
+    margin-bottom: 20px;
+}
+.form-box-1 {
+    margin: 0px auto;
+    margin-top: 120px;
+    padding: 5px;
+    width: 60%;
+    background-color: rgba(250, 250, 250, 0.5);
+    backdrop-filter: none;
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.2);
+    margin-bottom: 25px
+}
+.form-box-2 {
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 10px;
+    width: 80%;
+    background-color: rgba(250, 250, 250, 0.5);
+    box-shadow: 0px 0px 5px 3px rgba(97, 96, 96, 0.2);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.form-box-2 h3,p {
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 5px;
+}
+#name_email {
+    font-weight: bold;
+}
+.rating-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    text-align: center;
+    
+}
+.rating-buttons input[type="radio"] {
+    display: none;
+}
+.rating-buttons label:hover {
+    background-color: blue;
+}
+.rating-buttons input[type="radio"]:checked + label {
+    background-color: blue;
+    color: #F7F7F7;
+    color: #111211;
+    
+    border-color: #111211;
+}
+.rating-buttons label {
+    width: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 24px;
+    color: #0a0a0a;
+    border: 2px solid #111111;
+    border-radius: 30%;
+    cursor: pointer;
+}
+textarea {
+    width: 85%;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+#first-visiting input[type="radio"],
+#informative input[type="radio"],
+#recommend input[type="radio"] {
+    cursor: pointer;
+}
+#first-visiting,
+#informative,
+#recommend label {
+    font-weight: bold;
+    font-size: large;
+}
+button[type="submit"],
+button[type="reset"] {
+    background-color: #121212;
+    color: #F6F2F2;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-size: medium;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}

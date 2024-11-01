@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Feedback-form</title>
+        <link rel="stylesheet" href="NavBar.css">
+        <link rel="stylesheet" href="Feedback.css">
+        <link rel="stylesheet" href="Footer.css">
+    </head>
+    <body>
+        
+            <header>
+                <div class="nav-bar">
+                    <nav>
+                        <img src="logo2-removebg-preview.png" class="logo" alt="Website Logo">
+                        <ol class="nav-links">
+                            <li><a href="Home.html">Home</a></li>
+                            <li><a href="#Gallery">Gallery</a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="profile.html">User Profile</a></li>
+                            <li><a href="Feedback.html" class="active">Feedback</a></li>
+                            <li><a href="#Sitemap">Sitemap</a></li>
+                            <li><a href="team.html">Team</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </header>
+        
+        
+
+        <form name="form" onsubmit="return validation(this);" action="natasha.20220702@iit.ac.lk" method="get">
+            <div class="form-elements">
+                <div class="form-box-1">
+                    <h1>Send us your Feedback!</h1>
+                    <h3>Personal Details: </h3>
+                    <div class="form-box-2" id="name_email">
+                        <label for="name">Enter Your Name: </label>
+                        <input type="text" name="name" id="name" size="30" placeholder="Enter names here"><br>
+                        <label for="email">Enter Your E-mail: </label>
+                        <input type="text" name="email" id="email" size="30" placeholder="Enter e-mail here"><br>
+                    </div>
+
+                
+                    <p>How satisfied are you with our services?<br>
+                    (1 being "Not satisfied at all!" and 10 being "Extremely satisfied!")</p><br>
+                    <div class="form-box-2">
+                        
+                        <div class="rating-buttons">
+                            <input type="radio" name="rating" id="rating-1" value="1">
+                            <label for="rating-1">1</label>
+                            <input type="radio" name="rating" id="rating-2" value="2">
+                            <label for="rating-2">2</label>
+                            <input type="radio" name="rating" id="rating-3" value="3">
+                            <label for="rating-3">3</label>
+                            <input type="radio" name="rating" id="rating-4" value="4">
+                            <label for="rating-4">4</label>
+                            <input type="radio" name="rating" id="rating-5" value="5">
+                            <label for="rating-5">5</label>
+                            <input type="radio" name="rating" id="rating-6" value="6">
+                            <label for="rating-6">6</label>
+                            <input type="radio" name="rating" id="rating-7" value="7">
+                            <label for="rating-7">7</label>
+                            <input type="radio" name="rating" id="rating-8" value="8">
+                            <label for="rating-8">8</label>
+                            <input type="radio" name="rating" id="rating-9" value="9">
+                            <label for="rating-9">9</label>
+                            <input type="radio" name="rating" id="rating-10" value="10">
+                            <label for="rating-10">10</label><br>
+                        </div>
+                    </div>
+                
+                    
+                    <p>Was this your first time visiting?</p> <br> 
+                    <div class="form-box-2" id="first-visiting">
+                        <input type="radio" name="first-visiting" id="yes1" value="Yes">
+                        <label for="yes1">Yes</label>
+                        <input type="radio" name="first-visiting" id="no1" value="No">
+                        <label for="no1">No</label><br>
+                    </div>
+                
+                    <p>Was this website informative and easy to navigate through?</p><br>
+                    <div class="form-box-2" id="informative">
+                        <input type="radio" name="informative" id="yes2" value="Yes">
+                        <label for="yes2">Yes</label>
+                        <input type="radio" name="informative" id="no2" value="No">
+                        <label for="no2">No</label><br>
+                    </div>
+                        
+                        <p>If "No" suggest any improvements for the future:</p><br>
+                        <textarea name="improvements" id="improvements" cols="30" rows="10" placeholder="Add your message here..."></textarea><br>
+                    
+                
+                    <p>Would you recommend our services?</p><br>
+                    <div class="form-box-2" id="recommend">
+                        <input type="radio" name="recommend" id="yes3" value="Yes">
+                        <label for="yes3">Yes</label>
+                        <input type="radio" name="recommend" id="no3" value="No">
+                        <label for="no3">No</label><br>
+                    </div>
+                    
+                    <p>Would you like to receive updates about the website and any offers?</p><br>
+                    <div class="form-box-2">
+                        <select name="receive-updates" id="receive-updates">
+                            <option value="disabled selected">-- Select an option --</option>
+                            <option value="email">Yes-via Email</option>
+                            <option value="sms">Yes-via SMS</option>
+                            <option value="no">No</option>
+                        </select><br>
+                    </div>
+                
+                    <p>Do you have any additional questions or requests?</p><br>
+                    <textarea name="questions" id="questions" cols="30" rows="10" placeholder="Add your message here..."></textarea><br>
+                    
+                    
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </div>
+        </form>
+        <footer>
+            <p><a href="PageEditor2.html">Click to view the Page Editor</a></p>
+            <p>&copy; 2024 MediHelp. All rights reserved.</p>
+        </footer>
+        <script src="feedback.js"></script>
+    </body>
+</html>

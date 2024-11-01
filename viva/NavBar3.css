@@ -1,0 +1,48 @@
+.nav-bar {
+    width: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.logo {
+    width: 170px;
+    height: auto;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+nav li {
+    display: inline;
+}
+.nav-links {
+    display: flex;
+}
+.nav-links li a {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.nav-links li a:hover {
+    padding: 5px;
+    background-color: rgb(5, 205, 245)
+}
+.nav-links li a:visited {
+    color: rgb(87, 38, 133);
+}
+.nav-links li a.active {
+    color: blue;
+    border-bottom: 4px solid;
+}
+footer {
+    background-color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    font-family: monospace;
+}

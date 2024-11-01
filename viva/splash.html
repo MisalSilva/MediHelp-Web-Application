@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>splash-screen</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="splash_screen">
+    <img src="logo2-removebg-preview.png" alt="Logo">
+    <h1>MediHelp</h1>
+    <h3>To Preserve and Improve</h3>
+    <h3>Patients health by delivering high quality, safe and effective health services and products.</h3>
+    <h4 id="c1">1.Misal Silva</h4>
+    <h4>2.Natasha De Mel</h4>
+    <h4>3.Manulya Egodapitiya</h4>
+    <p>Loading...</p>
+  </div>
+
+  <div id="main-content" style="display: none;"></div>
+
+  <script>
+    setTimeout(function() {
+      document.querySelector('.splash_screen').style.display = 'none';
+      window.location.href = 'Home.html'; // Redirect to Home.html
+    }, 4000); 
+  </script>
+</body>
+</html>
+
+
+

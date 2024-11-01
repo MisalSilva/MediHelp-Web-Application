@@ -1,0 +1,41 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url(Medicine.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.editor-elements {
+    text-align: center;
+    margin: 50px auto;
+    padding: 50px;
+    width: 50%;
+    border-radius: 20px;
+    margin-top: 120px;
+    background-color: rgba(18, 18, 18, 0.4);
+    backdrop-filter: blur(50px) saturate(150%);
+    color: white;
+}
+.editor-elements h1 {
+    font-size: 2rem;
+    color: black;
+    text-decoration: underline;
+}
+.editor-elements h3 {
+    font-style: italic;
+    color: black;
+}
+.editor-elements h4 {
+    font-size: larger;
+    text-align: left;
+    color: black;
+}
+.editor-elements p {
+    font-size: medium;
+    text-align: left;
+}
+footer {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+

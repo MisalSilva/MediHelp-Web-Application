@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            padding-bottom: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Checkout</h1>
+
+        <!-- Summary of items in the cart -->
+        
+        <div id="cartSummary" class="listCart"></div>
+
+        <!-- Checkout Form -->
+        <form action="submit_checkout.php" method="post">
+            <h2>Personal Information</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" required><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <h2>Payment Information</h2>
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required><br>
+
+            <label for="cardHolderName">Cardholder's Name:</label>
+            <input type="text" id="cardHolderName" name="cardHolderName" required><br>
+
+            <h2>Billing Address</h2>
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required><br>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea><br>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </div>
+
+    <footer>
+        <p><a href="PageEditor.html">Click to view the Page Editor</a></p>
+        <p>&copy; 2024 MediHelp. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Retrieve cart items from URL parameters
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const encodedCartItems = urlParams.get('cartItems');
+        // Decode the cartItems from URL
+        const decodedCartItems = decodeURIComponent(encodedCartItems);
+        const cartItems = JSON.parse(decodedCartItems);
+
+        // Calculate total price of all items in the cart
+        const totalPrice = cartItems.reduce((total, item) => total + (parseFloat(item.price.slice(1)) * item.quantity), 0);
+
+        // Display cart items and total price in cart summary section
+        let cartSummary = document.getElementById('cartSummary');
+        let summaryHTML = '<h2>Cart Summary</h2>';
+        summaryHTML += '<ul>';
+        cartItems.forEach(item => {
+            summaryHTML += `<li>${item.name}: ${item.price}</li>`;
+        });
+        summaryHTML += '</ul>';
+        summaryHTML += `<p>Total: $${totalPrice.toFixed(2)}</p>`;
+        cartSummary.innerHTML = summaryHTML;
+    </script>    
+
+</body>
+</html>
